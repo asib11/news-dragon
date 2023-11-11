@@ -8,8 +8,8 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
     return (
-        <Container >
-            <div className="text-center my-5">
+        <Container className="text-center my-5">
+            <div >
                 <img src={logo} alt="" />
                 <p><small>Journalism Without Fear or Favor</small></p>
                 <p>{moment().format("dddd, MMMM D, YYYY")}</p>
