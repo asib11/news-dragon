@@ -1,17 +1,30 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const RightNav = () => {
-    const [catagories, uesCatagories] = useState();
-    useEffect(()=>{
+    const [catagories, setCatagories] = useState([]);
+
+    useEffect(() => {
         fetch('http://localhost:5000/catagories')
-        .then(response => response.json())
-        .then(data =>console.log(data))
-        .catch(error => console.log(error))
-    },[])
+            .then(response => response.json())
+            .then(data => setCatagories(data))
+            .catch(error => console.log(error))
+    }, []);
+
     return (
         <div>
-            <h2>right nav</h2>
+            <h4>All Catagory</h4>
+            {
+                catagories.map((catagory) => {
+                    // console.log(catagory)
+                    <p
+                        key={catagory.id}
+                    >
+                        <Link>{catagory.name}</Link>
+                    </p>
+                    
+                })
+            }
         </div>
     );
 };
