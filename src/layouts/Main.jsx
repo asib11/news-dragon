@@ -3,8 +3,8 @@ import Header from "../pages/Home/Shared/Header/Header";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import RightNav from "../pages/Home/Shared/RightNav/RightNav";
-import LeftNav from "../pages/Home/Shared/LeftNav/LeftNav";
+import RightNav from "../pages/Home/Shared/LeftNav/LeftNav";
+import LeftNav from "../pages/Home/Shared/RightNav/RightNav";
 
 const Main = () => {
     return (
@@ -21,7 +21,6 @@ const Main = () => {
                         <h3 className="text-center">middle coming soon</h3>
                     </Col>
                     <Col lg={3}>
-
                         <LeftNav></LeftNav>
                     </Col>
                 </Row>
