@@ -14,7 +14,7 @@ const NewsLayout = () => {
             </Header>
             <Container>
                 <Row>
-                    
+
                     <Col lg={9}>
                         <Outlet></Outlet>
                     </Col>
