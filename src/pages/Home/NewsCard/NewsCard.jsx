@@ -1,12 +1,12 @@
 import moment from 'moment';
 import Card from 'react-bootstrap/Card';
-import { FaRegBookmark, FaShare, FaShareNodes } from 'react-icons/fa6';
+import { FaEye, FaRegBookmark, FaShareNodes, FaStar } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const NewsCard = ({ news }) => {
   // eslint-disable-next-line react/prop-types
-  const { title, details, _id, image_url, author, } = news;
+  const { title, details, _id, image_url, author,total_view, rating } = news;
   return (
     <Card className="mb-4">
       <Card.Header className='d-flex align-items-center'>
@@ -29,7 +29,14 @@ const NewsCard = ({ news }) => {
           }
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted d-flex ">
+        <div className='flex-grow-1'>
+          <FaStar className='text-warning'></FaStar> <span>{rating?.number}</span>
+        </div>
+        <div>
+          <FaEye></FaEye> <span> {total_view}</span>
+        </div>
+      </Card.Footer>
     </Card>
   );
 };
