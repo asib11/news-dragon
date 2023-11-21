@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // eslint-disable-next-line react/prop-types
 const NewsCard = ({ news }) => {
   // eslint-disable-next-line react/prop-types
-  const { title, details, _id, image_url, author,total_view, rating } = news;
+  const { title, details, _id, image_url, author, total_view, rating } = news;
   return (
     <Card className="mb-4">
       <Card.Header className='d-flex align-items-center'>
