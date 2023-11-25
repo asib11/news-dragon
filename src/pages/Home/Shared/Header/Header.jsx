@@ -3,15 +3,11 @@ import logo from '../../../../assets/logo.png';
 import moment from 'moment';
 import Container from 'react-bootstrap/Container';
 import Marquee from "react-fast-marquee";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { AuthContext } from '../../../../providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../../../providers/AuthProvider';
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    // const {user} = useContext(AuthContext);
     return (
         <Container className="text-center my-5">
             <div >
@@ -27,34 +23,6 @@ const Header = () => {
                     </p>
                 </Marquee>
             </div>
-            <Navbar collapseOnSelect expand="lg" className="bg-body-light">
-                <Container className='px-0'>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="m-auto">
-                            <Nav.Link href="#features">
-                                <Link to='/'>Home</Link>
-                            </Nav.Link>
-                            <Nav.Link href="#pricing">About</Nav.Link>
-                            <Nav.Link href="#pricing">Career</Nav.Link>
-                        </Nav>
-                        <Nav className='d-flex align-items-center'>
-                            {
-                                user && <Nav.Link href="#deets">
-                                    <Link><FaUserCircle className='text-black display-6'></FaUserCircle> </Link>
-                                </Nav.Link>
-
-                            }
-                            <Nav.Link className='px-0' eventKey={2} href="#memes">
-                            {
-                                user ? <Button className='rounded-0 px-4' variant="dark">Logout</Button>: <Button className='rounded-0 px-4' variant="dark">Login</Button>
-                            }
-                            </Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-
         </Container>
     );
 };
