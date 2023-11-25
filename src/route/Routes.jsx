@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter, } from "react-router-dom";
-import Main from "../layouts/Main";
+
 // import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
 import News from "../pages/news/News/News";
@@ -7,6 +7,7 @@ import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/Home/Shared/Login/Login";
 import Register from "../pages/Home/Shared/Login/Register";
 import NewsLayout from "../layouts/NewsLayout";
+import Main from "../layouts/Main";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Navigate to='/catagory/0'></Navigate>
+                element: <Navigate to='/category/0'></Navigate>
             },
             {
                 path: 'login',
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'category',
-        element: <Category></Category>,
+        element: <Main></Main>,
         children:[
             // {
             //     path: '/',
