@@ -18,9 +18,10 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
+            console.log(createdUser)
         })
         .catch(error => console.error(error));
-        
+        form.reset();
     }
     return (
         <Container className='w-25 m-auto'>
