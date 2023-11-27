@@ -28,7 +28,7 @@ const NavigationBar = () => {
                             }
                             
                                 {
-                                    user ? <Button className='rounded-0 px-4' variant="dark">Logout</Button> : <Button className='rounded-0 px-4' variant="dark">Login</Button>
+                                    user ? <Link to=''><Button className='rounded-0 px-4' variant="dark">Logout</Button></Link>  :<Link to='/login'><Button className='rounded-0 px-4' variant="dark">Login</Button></Link> 
                                 }
                             
                         </Nav>

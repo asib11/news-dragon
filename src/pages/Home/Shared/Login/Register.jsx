@@ -1,15 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../providers/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+    const handleCreateUser = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+        .then(result => {
+            const createdUser = result.user;
+        })
+        .catch(error => console.error(error));
+        
+    }
     return (
         <Container className='w-25 m-auto'>
             <h3>Please Login</h3>
-            <Form >
+            <Form onSubmit={handleCreateUser}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter Full Name" />
