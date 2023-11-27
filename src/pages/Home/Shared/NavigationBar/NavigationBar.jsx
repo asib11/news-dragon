@@ -10,7 +10,12 @@ import Button from 'react-bootstrap/esm/Button';
 import { AuthContext } from '../../../../providers/AuthProvider';
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch(error => console.log(error))
+    }
     return (
         <Container>
             <Navbar collapseOnSelect expand="lg" className="bg-body-light">
@@ -28,7 +33,7 @@ const NavigationBar = () => {
                             }
                             
                                 {
-                                    user ? <Link to=''><Button className='rounded-0 px-4' variant="dark">Logout</Button></Link>  :<Link to='/login'><Button className='rounded-0 px-4' variant="dark">Login</Button></Link> 
+                                    user ? <Link to=''><Button onClick={handleLogOut} className='rounded-0 px-4' variant="dark">Logout</Button></Link>  :<Link to='/login'><Button className='rounded-0 px-4' variant="dark">Login</Button></Link> 
                                 }
                             
                         </Nav>
