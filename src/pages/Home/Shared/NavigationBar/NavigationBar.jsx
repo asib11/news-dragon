@@ -33,7 +33,7 @@ const NavigationBar = () => {
                             }
                             
                                 {
-                                    user ? <Link to=''><Button onClick={handleLogOut} className='rounded-0 px-4' variant="dark">Logout</Button></Link>  :<Link to='/login'><Button className='rounded-0 px-4' variant="dark">Login</Button></Link> 
+                                    user ? <Link to='/category/0'><Button onClick={handleLogOut} className='rounded-0 px-4' variant="dark">Logout</Button></Link>  :<Link to='/login'><Button className='rounded-0 px-4' variant="dark">Login</Button></Link> 
                                 }
                             
                         </Nav>

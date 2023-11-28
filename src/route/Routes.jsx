@@ -9,6 +9,7 @@ import Register from "../pages/Home/Shared/Login/Register";
 import NewsLayout from "../layouts/NewsLayout";
 import Main from "../layouts/Main";
 import PrivateRoutes from "./PrivateRoutes";
+import Terms from "../pages/Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'terms',
+                element: <Terms></Terms>
             }
         ]
     },

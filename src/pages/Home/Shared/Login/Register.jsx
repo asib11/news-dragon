@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,6 +8,8 @@ import { AuthContext } from '../../../../providers/AuthProvider';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(false);
+
     const handleCreateUser = event =>{
         event.preventDefault();
         const form = event.target;
@@ -23,6 +25,11 @@ const Register = () => {
         .catch(error => console.error(error));
         form.reset();
     }
+
+    const handleChecked = event =>{
+        setAccepted(event.target.checked)
+    }
+
     return (
         <Container className='w-25 m-auto'>
             <h3>Please Login</h3>
@@ -46,9 +53,9 @@ const Register = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Accept Terms & Conditions" />
+                    <Form.Check onClick={handleChecked} type="checkbox" label={<>Accept <Link to='/terms'>Terms & Conditions</Link></>} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" disabled={!accepted} type="submit">
                     Register
                 </Button>
                 <br />
