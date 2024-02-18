@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element:<Category></Category>,
-                loader :({params})=>fetch( `https://news-dragon-server-n3ro3vfk6-asib-ahmeds-projects.vercel.app/categories/${params.id}`)
+                loader :({params})=>fetch( `news-dragon-server-jk3zkhrgn-asib-ahmeds-projects.vercel.app/categories/${params.id}`)
             },
         ]
     },
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element:<PrivateRoutes><News></News></PrivateRoutes>,
-                loader:({params}) =>  fetch(`https://news-dragon-server-n3ro3vfk6-asib-ahmeds-projects.vercel.app/news/${params.id}`),
+                loader:({params}) =>  fetch(`news-dragon-server-jk3zkhrgn-asib-ahmeds-projects.vercel.app/news/${params.id}`),
             },
         ]
     }
